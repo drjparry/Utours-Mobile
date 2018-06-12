@@ -24,10 +24,11 @@ const styles = {
         flexGrow: 0
     },
     categoryStripContent: {
-        marginLeft: 24
+        marginLeft: 24,
+        paddingRight: 24 // because on iOS marginRight of the link9482 does not add to scrollview scroll
     },
     category: {
-        marginRight: 24,
+        marginRight: 24, // does not apply to last for some reason (meaning it doesnt extend scroll) link9482
         width: 128 // match link22
     },
     categoryImage: {
@@ -44,7 +45,8 @@ const styles = {
         flexGrow: 0
     },
     featuredStripContent: {
-        marginLeft: 24
+        marginLeft: 24,
+        paddingRight: 24
     },
     featured: {
         marginRight: 24,
@@ -105,6 +107,7 @@ const styles = {
     },
     topGuidesStripContent: {
         marginLeft: 24,
+        paddingRight: 24
     },
     topGuidesGuide: {
         marginRight: 8
