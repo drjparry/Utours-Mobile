@@ -10,8 +10,18 @@ Navigation.events().registerAppLaunchedListener(() => {
 
     Navigation.setRoot({
         root: {
-            component: {
-                name: 'nav.utours.ScreenOpening'
+            stack: {
+                children: [
+                    {
+                        component: {
+                            name: 'nav.utours.ScreenOpening',
+                            passProps: {
+                                text: 'This is tab 1',
+                                myFunction: () => 'Hello from a function!',
+                            }
+                        }
+                    }
+                ]
             }
         }
     });
