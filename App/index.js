@@ -11,14 +11,16 @@ Navigation.events().registerAppLaunchedListener(() => {
     Navigation.setRoot({
         root: {
             stack: {
+                options: {
+                    topBar: {
+                        drawBehind: true,
+                        animate: true
+                    }
+                },
                 children: [
                     {
                         component: {
-                            name: 'nav.utours.ScreenOpening',
-                            passProps: {
-                                text: 'This is tab 1',
-                                myFunction: () => 'Hello from a function!',
-                            }
+                            name: 'nav.utours.ScreenOpening'
                         }
                     }
                 ]
