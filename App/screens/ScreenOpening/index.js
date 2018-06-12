@@ -44,13 +44,109 @@ class ScreenOpening extends Component {
     }
 
     gotoCountry = async (name) => {
-        await Navigation.push(this.props.componentId, {
-            component: {
-                name: 'nav.utours.ScreenHome',
-                options: {
-                    topBar: {
-                        title: {
-                            text: name
+        // await Navigation.push(this.props.componentId, {
+        //     component: {
+        //         name: 'nav.utours.ScreenHome',
+        //         options: {
+        //             topBar: {
+        //                 title: {
+        //                     text: name
+        //                 }
+        //             }
+        //         }
+        //     }
+        // });
+
+        Navigation.setRoot({
+            root: {
+                bottomTabs: {
+                    children: [
+                        {
+                            stack: {
+                                id: 'TAB_SEARCH',
+                                children: [
+                                    {
+                                        component: {
+                                            name: 'nav.utours.ScreenHome',
+                                            options: {
+                                                topBar: {
+                                                    visible: true,
+                                                    title: {
+                                                        text: name
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                ],
+                                options: {
+                                    bottomTab: {
+                                        title: 'Search',
+                                        icon: require('./search_icon.png')
+                                    },
+                                    topBar: {
+                                        visible: false
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            stack: {
+                                children: [
+                                    {
+                                        component: {
+                                            name: 'nav.utours.ScreenPurchased'
+                                        }
+                                    }
+                                ],
+                                options: {
+                                    bottomTab: {
+                                        title: 'My Tours',
+                                        icon: require('./bag_icon.png')
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            stack: {
+                                children: [
+                                    {
+                                        component: {
+                                            name: 'nav.utours.ScreenSaved'
+                                        }
+                                    }
+                                ],
+                                options: {
+                                    bottomTab: {
+                                        title: 'Saved',
+                                        icon: require('./heart_icon.png')
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            stack: {
+                                children: [
+                                    {
+                                        component: {
+                                            name: 'nav.utours.ScreenProfile'
+                                        }
+                                    }
+                                ],
+                                options: {
+                                    bottomTab: {
+                                        title: 'Profile',
+                                        icon: require('./profile_icon.png')
+                                    }
+                                }
+                            }
+                        }
+                    ],
+                    options: {
+                        bottomTabs: {
+                            tabColor: '#000000',
+                            titleDisplayMode: 'alwaysShow',
+                            fontSize: 13
                         }
                     }
                 }
